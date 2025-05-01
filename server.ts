@@ -18,7 +18,7 @@ app.use(express.json());
 //route
 app.use("/api/auth", authRouter);
 app.use("/api/projects", projectRoutes);
-app.use("/api", taskRoutes);
+app.use("/api/tasks", taskRoutes);
 
 // Start server
 connectDB().then(() => {

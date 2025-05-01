@@ -1,4 +1,4 @@
-import { Schema, model,Types } from 'mongoose';
+import { Schema, model,Types ,HydratedDocument } from 'mongoose';
 
 interface IUser {
     email: string;
@@ -15,5 +15,5 @@ const userSchema = new Schema<IUser>({
     country: { type: String, required: true },
     projects: [{ type: Schema.Types.ObjectId, ref: 'Project' }],
 });
-
+export type UserDocument = HydratedDocument<IUser>;
 export const User = model<IUser>('User', userSchema);
