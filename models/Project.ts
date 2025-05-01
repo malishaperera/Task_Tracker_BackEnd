@@ -1,9 +1,9 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 interface IProject {
     title: string;
-    user: Schema.Types.ObjectId;
-    tasks: Schema.Types.ObjectId[];
+    user: Types.ObjectId;
+    tasks:Types.ObjectId[];
 }
 
 const projectSchema = new Schema<IProject>({

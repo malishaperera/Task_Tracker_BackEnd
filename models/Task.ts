@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 // Task Status  ENUM
-enum TaskStatus {
+export enum TaskStatus {
     TODO = 'todo',
     IN_PROGRESS = 'in-progress',
     DONE = 'done',
@@ -14,8 +14,8 @@ interface ITask {
     status: TaskStatus;
     createdAt: Date;
     completedAt: Date | null;
-    project: Schema.Types.ObjectId;
-    user: Schema.Types.ObjectId;
+    project: Types.ObjectId;
+    user: Types.ObjectId;
 }
 
 // Task Schema

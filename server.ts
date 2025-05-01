@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from "./database/db";
 import authRouter from "./routes/auth";
+import projectRoutes from "./routes/projects";
+import taskRoutes from "./routes/tasks";
 
 dotenv.config();
 const app = express();
@@ -15,6 +17,8 @@ app.use(express.json());
 
 //route
 app.use("/api/auth", authRouter);
+app.use("/api/projects", projectRoutes);
+app.use("/api", taskRoutes);
 
 // Start server
 connectDB().then(() => {

@@ -1,11 +1,11 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model,Types } from 'mongoose';
 
 interface IUser {
     email: string;
     password: string;
     name: string;
     country: string;
-    projects: Schema.Types.ObjectId[];
+    projects: Types.ObjectId[];
 }
 
 const userSchema = new Schema<IUser>({
